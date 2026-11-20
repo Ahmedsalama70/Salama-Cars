@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-gray-300 shadow-sm sm:px-6">
+        <a class="flex items-center" href="loggedin.html">
+            <img src="./images/logo.jpg" alt="Logo" class="h-12 w-16 object-contain scale-125 sm:h-15 sm:w-20">
+        </a>
+        <div class="ml-auto flex flex-wrap items-center justify-end gap-2 sm:gap-4">
+            <span id="usernameDisplay" class="max-w-24 truncate text-sm font-medium text-gray-700 sm:max-w-none sm:text-base"></span>
+    
+            <!-- Cart Dropdown -->
+            <div class="relative group">
+                <a class="flex items-center text-gray-700 hover:text-blue-600 cursor-pointer py-2" href="#" id="cartDropdown">
+                    <i class="fas fa-shopping-cart text-xl"></i> 
+                    <span id="cartCount" class="ml-1 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+                </a>
+                <!-- Dropdown Menu -->
+                <div id="cartDropdownMenu" class="hidden absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                    <div id="cartDropdownItems" class="px-4 py-2 text-sm text-gray-600"></div>
+                    <div class="border-t border-gray-100 my-1"></div>
+                    <a class="block px-4 py-2 text-sm text-blue-600 hover:bg-gray-50 font-medium text-center" href="cart.html">View All Products</a>
+                </div>
+            </div>
+            
+            <button onclick="logout()" class="px-3 py-2 text-sm font-medium text-red-600 border border-red-600 rounded hover:bg-red-600 hover:text-white transition sm:px-4">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Cart Items -->
+    <div class="max-w-7xl mx-auto mt-12 px-4">
+        <div class="flex flex-wrap items-center -mx-2" id="cart-items">
+        </div>
+    </div>
+
+    <!-- Total Price -->
+    <div class="max-w-7xl mx-auto mt-8 px-4 text-center">
+        <h3 class="text-2xl font-bold">Total Price: <span id="totalPrice" class="text-blue-600">0</span> ج.م</h3>
+    </div>
+
+    <div class="max-w-7xl mx-auto my-8 px-4">
+        <hr class="border-gray-800">
+    </div>
+
+
+    <!-- Favorite Items -->
+    <div class="max-w-7xl mx-auto mt-12 px-4 mb-12">
+        <h2 class="text-3xl font-bold text-center favorite-title mb-6">Favorite Items</h2>
+        <div id="favorite-items" class="favorite-items-container flex flex-wrap -mx-2">     
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+            <p class="text-sm">&copy; 2026 Salama Cars &amp; Motorcycles Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
